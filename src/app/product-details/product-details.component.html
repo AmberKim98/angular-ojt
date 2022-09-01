@@ -1,37 +1,38 @@
-<!-- <p>Product ID: {{ product.id }}</p>
-<h4>Product Name: {{ product.name }}</h4> -->
-<h3>Product Detail Information</h3>
-<div *ngIf="product">
-    <table>
-        <tr class="ttl">
-            <td colspan="3">Product Information</td>
-        </tr>
-        <tr>
-            <td>Product ID: </td>
-            <td>{{ product.id }}</td>
-        </tr>
-        <tr>
-            <td>Product Name: </td>
-            <td>{{ product.name }}</td>
-        </tr>
-        <tr>
-            <td>Product Description: </td>     
-            <td>{{ product.description }}</td>
-        </tr>
-        <tr>
-            <td>Product Price: </td>     
-            <td><b>$ {{ product.price }}</b></td>
-        </tr>
-    </table>
-    
-    <div class="btn-div">
-        <button type="submit" (click)="addToCart(product)" class="add-btn">Add to Cart</button>
-        <button type="submit" (click)="removeFromCart()" class="remove-btn">Remove from Cart</button>
-        <button type="submit" (click)="showCartItems()" class="go-btn" *ngIf="!showCart">See Cart</button>
-        <button type="submit" (click)="hideCartItems()" class="go-btn" *ngIf="showCart">Hide Cart</button>
+<div class="py-5">
+    <h4 class="pb-3" [ngStyle]="{'font-weight': 'bold'}">Product Detail Information</h4>
+    <div *ngIf="product">
+        <table>
+            <tr class="ttl">
+                <td colspan="3">Product Information</td>
+            </tr>
+            <tr>
+                <td>Product ID: </td>
+                <td>{{ product.id }}</td>
+            </tr>
+            <tr>
+                <td>Product Name: </td>
+                <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+                <td>Product Description: </td>     
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <td>Product Price: </td>     
+                <td><b>$ {{ product.price }}</b></td>
+            </tr>
+        </table>
+        
+        <div class="btn-div">
+            <button type="submit" (click)="addToCart(product)" class="add-btn">Add to Cart</button>
+            <button type="submit" (click)="removeFromCart(product)" class="remove-btn">Remove from Cart</button>
+            <button type="submit" (click)="showCartItems()" class="go-btn" *ngIf="!showCart">See Cart</button>
+            <button type="submit" (click)="hideCartItems()" *ngIf="showCart" [ngClass]="showCart? 'btn btn-sm btn-dark': ''">Hide Cart</button>
+        </div>
     </div>
+
+    <ng-template [ngIf]="showCart">
+        <app-cart></app-cart>
+    </ng-template>
 </div>
 
-<div *ngIf="showCart">
-    <app-cart></app-cart>
-</div>

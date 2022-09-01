@@ -16,8 +16,8 @@ export class CartService {
   }
 
   /** Remove items from cart */
-  clearCart() {
-    this.items = [];
+  clearCart(product: Product) {
+    this.items.pop();
     return this.items;
   }
 

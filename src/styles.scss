@@ -14,10 +14,12 @@
   
   .container {
     display: flex;
+    width: 100%;
     flex-direction: row;
   }
   
   router-outlet + *  {
+    width: 100%;
     padding: 0 16px;
   }
   

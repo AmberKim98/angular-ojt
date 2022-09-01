@@ -30,9 +30,8 @@ export class ProductDetailsComponent implements OnInit {
     window.alert('This item is successfully added to cart!');
   }
 
-  removeFromCart() {
-    const items = this.cartService.clearCart();
-    console.log('ITEMS AFTER DELETE: ', items);
+  removeFromCart(product: Product) {
+    this.cartService.clearCart(product);
   }
 
   showCartItems() {
