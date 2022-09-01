@@ -1,0 +1,29 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px 30px;
+    }
+    .ttl {
+        background-color: #f2f2f2;
+    }
+}
+.btn-div {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    .add-btn {
+        padding: 10px 30px;
+        background-color: #00C851;
+    }
+    .remove-btn {
+        background-color: #ff4444;
+    }
+    .go-btn {
+        background-color: #4285F4;
+    }
+}
